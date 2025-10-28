@@ -1,91 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Le The Khoi | Legendary Profile</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-</head>
-<body>
-  <canvas id="bg"></canvas>
-
-  <div class="container">
-    <h1 class="glitch" data-text="">My Profile</h1>
-    <p id="typing-text" class="typing"></p>
-
-    <!-- Avatar VIP -->
-    <div class="avatar-vip">
-      <div class="energy-ring"></div>
-      <div class="light-sweep"></div>
-      <!-- <div class="circle-text">your circle text </div> -->
-      <img src="img.png" alt="Le The Khoi" class="avatar">
-      <div class="rank-badge">Le The Khoi (2009)</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Le The Khoi | Glitch Bright Profile</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <!-- ===== Floating Chat Widget ===== -->
+  <div class="chat-widget" id="chatWidget">
+    <div class="chat-header">💬 Chat with Khoi</div>
+    <div class="chat-body" id="chatBody">
+      <div class="bot-msg">👋 Hey! Need help or wanna say hi?</div>
     </div>
-
-    <div class="bio">
-      <p>👋 I'm <span>Le The Khoi</span> from <span>Vietnam 🇻🇳</span></p>
-      <p>💻 Full-Stack Developer & Cyber Security Enthusiast</p>
-      <p>🚀 Passionate about building modern, secure, and creative web experiences.</p>
+    <div class="chat-input">
+      <input type="text" id="userMsg" placeholder="Type your message..." />
+      <button id="sendMsg"><i class="ri-send-plane-2-line"></i></button>
     </div>
-
-     <h2 class="section-title">🚀 Tech Stack & Skills</h2>
-    <div class="skills">
-      <div class="icon" style="color:#181717"><i class="ri-github-fill"></i></div>
-      <div class="icon" style="color:#339933"><i class="ri-nodejs-line"></i></div>
-      <div class="icon" style="color:#61DBFB"><i class="ri-reactjs-line"></i></div>
-      <div class="icon" style="color:#E44D26"><i class="ri-html5-line"></i></div>
-      <div class="icon" style="color:#1572B6"><i class="ri-css3-line"></i></div>
-      <div class="icon" style="color:#F7DF1E"><i class="ri-javascript-line"></i></div>
-      <div class="icon" style="color:#3776AB"><i class="ri-code-s-slash-line"></i></div>
-      <div class="icon" style="color:#F0DB4F"><i class="ri-terminal-box-line"></i></div>
-      <div class="icon" style="color:#FCC624"><i class="ri-linux-line"></i></div>
-      <div class="icon" style="color:#00f0ff"><i class="ri-shield-keyhole-line"></i></div>
-      <div class="icon" style="color:#a855f7"><i class="ri-brain-line"></i></div>
-      <div class="icon" style="color:#FF6F00"><i class="ri-apps-2-line"></i></div>
-      <div class="icon" style="color:#4CAF50"><i class="ri-database-2-line"></i></div>
-      <div class="icon" style="color:#61DBFB"><i class="ri-global-line"></i></div>
-    </div>
-
-    <h2 class="section-title">🧩 About Me</h2>
-    <div class="about">
-      <p>🌟 I enjoy turning complex problems into simple, elegant solutions using clean code and creative design.</p>
-      <p>🔐 I’m fascinated by <span>network security</span>, <span>web vulnerabilities</span>, and <span>ethical hacking</span>.</p>
-      <p>📚 Currently improving my knowledge of <span>Cloud, DevOps</span> & <span>Pen-Testing</span>.</p>
-    </div>
-
-    <h2 class="section-title">💡 Full-Stack Capabilities</h2>
-    <div class="stack">
-      <div class="card">
-        <h3>Frontend</h3>
-        <p>HTML • CSS • JavaScript • React • Tailwind</p>
-      </div>
-      <div class="card">
-        <h3>Backend</h3>
-        <p>Node.js • Express • MongoDB • RESTful APIs</p>
-      </div>
-      <div class="card">
-        <h3>Cyber Security</h3>
-        <p>Linux • Wireshark • Nmap • SQLi • XSS • Hashing</p>
-      </div>
-    </div>
-
-    <h2 class="section-title">🌐 Connect With Me</h2>
-    <div class="socials">
-      <a href="https://zalo.me/0989101241" target="_blank"><i class="ri-chat-smile-3-line" style="color:#0088ff"></i></a>
-      <a href="https://facebook.com/coder09" target="_blank"><i class="ri-facebook-fill" style="color:#1877f2"></i></a>
-      <a href="https://www.instagram.com/lt.khoi_09" target="_blank"><i class="ri-instagram-line" style="color:#E1306C"></i></a>
-      <a href="https://www.tiktok.com/@anhiubaothy" target="_blank"><i class="ri-tiktok-fill" style="color:#fff"></i></a>
-      <a href="mailto:lethekhoi209@hotmail.com"><i class="ri-mail-line" style="color:#ff4b4b"></i></a>
-      <a href="https://t.me/coder_009" target="_blank"><i class="ri-telegram-fill" style="color:#24A1DE"></i></a>
-      <a href="https://github.com/kdus09" target="_blank"><i class="ri-github-fill" style="color:#181717"></i></a>
-      <a href="https://khoidev.io.vn" target="_blank"><i class="ri-global-line" style="color:#00f0ff"></i></a>
-    </div>
-
-    <footer>Copyright © 2025 <span>Le The Khoi</span> All Right</footer>
   </div>
 
-  <script src="script.js"></script>
-</body>
+  <!-- Chat toggle button -->
+  <div class="chat-toggle" id="chatToggle">
+    <i class="ri-message-3-line"></i>
+  </div>
+  <body>
+
+    <!-- ===== Side Neon Menu ===== -->
+    <nav class="side-menu">
+      <a href="#home" title="Home"><i class="ri-home-5-line"></i></a>
+      <a href="#skills" title="Skills"><i class="ri-flashlight-line"></i></a>
+      <a href="#about" title="About"><i class="ri-user-3-line"></i></a>
+      <a href="#contact" title="Message"><i class="ri-chat-3-line"></i></a>
+    </nav>
+    <canvas id="bg"></canvas>
+
+    <div class="container">
+      <h1 class="glitch" data-text="Le The Khoi">Le The Khoi</h1>
+      <p id="typing-text" class="typing"></p>
+
+      <div class="avatar-vip">
+        <div class="energy-ring"></div>
+        <div class="light-sweep"></div>
+        <img src="img.png" alt="Le The Khoi" class="avatar" />
+        <div class="rank-badge">Full-Stack Dev ✦ Cyber Security</div>
+      </div>
+
+      <div class="bio">
+        <p>👋 Hi, I'm <span>Le The Khoi</span> from <span>Vietnam 🇻🇳</span></p>
+        <p>
+          💻 Passionate about <span>Web Development</span>,
+          <span>Cyber Security</span> & <span>Creative UI</span>
+        </p>
+        <p>🚀 Turning code into art ✦ Exploring AI & futuristic tech</p>
+      </div>
+
+      <h2 class="section-title">⚡ Tech Stack</h2>
+      <div class="skills">
+        <!-- === Frontend === -->
+        <div class="icon" title="HTML5" style="color: #e44d26">
+          <i class="ri-html5-line"></i>
+        </div>
+        <div class="icon" title="CSS3" style="color: #1572b6">
+          <i class="ri-css3-line"></i>
+        </div>
+        <div class="icon" title="JavaScript" style="color: #f7df1e">
+          <i class="ri-javascript-line"></i>
+        </div>
+        <div class="icon" title="ReactJS" style="color: #61dbfb">
+          <i class="ri-reactjs-line"></i>
+        </div>
+        <div class="icon" title="VueJS" style="color: #42b883">
+          <i class="ri-vuejs-line"></i>
+        </div>
+        <div class="icon" title="TailwindCSS" style="color: #38bdf8">
+          <i class="ri-tailwind-css-line"></i>
+        </div>
+        <div class="icon" title="Bootstrap" style="color: #7952b3">
+          <i class="ri-bootstrap-line"></i>
+        </div>
+
+        <!-- === Backend === -->
+        <div class="icon" title="Node.js" style="color: #68a063">
+          <i class="ri-nodejs-line"></i>
+        </div>
+        <div class="icon" title="Express" style="color: #444">
+          <i class="ri-code-s-slash-line"></i>
+        </div>
+        <div class="icon" title="MongoDB" style="color: #4db33d">
+          <i class="ri-database-2-line"></i>
+        </div>
+        <div class="icon" title="MySQL" style="color: #00758f">
+          <i class="ri-database-line"></i>
+        </div>
+        <div class="icon" title="PHP" style="color: #8993be">
+          <i class="ri-php-line"></i>
+        </div>
+        <div class="icon" title="Python" style="color: #3776ab">
+          <i class="ri-python-line"></i>
+        </div>
+
+        <!-- === Cyber Security === -->
+        <div class="icon" title="Linux" style="color: #000">
+          <i class="ri-linux-line"></i>
+        </div>
+        <div class="icon" title="Wireshark" style="color: #00aeef">
+          <i class="ri-shield-line"></i>
+        </div>
+        <div class="icon" title="Nmap" style="color: #0ff">
+          <i class="ri-scan-2-line"></i>
+        </div>
+        <div class="icon" title="Metasploit" style="color: #c0392b">
+          <i class="ri-bug-line"></i>
+        </div>
+        <div class="icon" title="Burp Suite" style="color: #ff5500">
+          <i class="ri-shield-keyhole-line"></i>
+        </div>
+
+        <!-- === Cloud & AI === -->
+        <div class="icon" title="AWS" style="color: #ff9900">
+          <i class="ri-cloud-line"></i>
+        </div>
+        <div class="icon" title="Firebase" style="color: #ffa000">
+          <i class="ri-fire-line"></i>
+        </div>
+        <div class="icon" title="Docker" style="color: #0db7ed">
+          <i class="ri-dv-line"></i>
+        </div>
+        <div class="icon" title="Kubernetes" style="color: #326ce5">
+          <i class="ri-apps-line"></i>
+        </div>
+        <div class="icon" title="AI / ML" style="color: #a855f7">
+          <i class="ri-brain-line"></i>
+        </div>
+
+        <!-- === Tooling / DevOps === -->
+        <div class="icon" title="GitHub" style="color: #181717">
+          <i class="ri-github-fill"></i>
+        </div>
+        <div class="icon" title="VS Code" style="color: #0078d7">
+          <i class="ri-terminal-box-line"></i>
+        </div>
+        <div class="icon" title="Postman" style="color: #ff6c37">
+          <i class="ri-send-plane-line"></i>
+        </div>
+        <div class="icon" title="Figma" style="color: #f24e1e">
+          <i class="ri-paint-brush-line"></i>
+        </div>
+        <div class="icon" title="Linux Shell" style="color: #00f0ff">
+          <i class="ri-command-line-line"></i>
+        </div>
+      </div>
+
+      <h2 class="section-title">🧠 About Me</h2>
+      <div class="about">
+        <p>✨ Building web apps with soul and creativity.</p>
+        <p>
+          🔐 Exploring <span>Security</span>, <span>AI</span>, and
+          <span>Automation</span>.
+        </p>
+        <p>
+          ☁️ Dreaming of contributing to <span>Open Source</span> and
+          <span>AI Security</span>.
+        </p>
+      </div>
+
+      <h2 class="section-title">💡 My Focus</h2>
+      <div class="stack">
+        <div class="card">
+          <h3>Frontend</h3>
+          <p>React • Tailwind • Motion • Vite • UX Design</p>
+        </div>
+        <div class="card">
+          <h3>Backend</h3>
+          <p>Node.js • Express • MongoDB • API • Auth</p>
+        </div>
+        <div class="card">
+          <h3>Security</h3>
+          <p>Linux • Kali • Nmap • Wireshark • XSS • SQLi</p>
+        </div>
+      </div>
+
+      <h2 class="section-title">🌐 Connect With Me</h2>
+      <div class="socials">
+        <a href="https://zalo.me/0989101241" target="_blank"
+          ><i class="ri-chat-smile-3-line"></i
+        ></a>
+        <a href="https://facebook.com/coder09" target="_blank"
+          ><i class="ri-facebook-fill"></i
+        ></a>
+        <a href="https://www.instagram.com/lt.khoi_09" target="_blank"
+          ><i class="ri-instagram-line"></i
+        ></a>
+        <a href="https://www.tiktok.com/@anhiubaothy" target="_blank"
+          ><i class="ri-tiktok-fill"></i
+        ></a>
+        <a href="mailto:lethekhoi209@hotmail.com"
+          ><i class="ri-mail-line"></i
+        ></a>
+        <a href="https://t.me/coder_009" target="_blank"
+          ><i class="ri-telegram-fill"></i
+        ></a>
+        <a href="https://github.com/kdus09" target="_blank"
+          ><i class="ri-github-fill"></i
+        ></a>
+        <a href="https://khoidev.io.vn" target="_blank"
+          ><i class="ri-global-line"></i
+        ></a>
+      </div>
+      <h2 id="contact" class="section-title">💬 Leave a Message</h2>
+      <div class="comment-box">
+        <textarea
+          id="commentInput"
+          placeholder="Write something cool..."
+        ></textarea>
+        <button id="postComment">Post</button>
+        <div id="commentList"></div>
+      </div>
+      <footer>© 2025 <span>Le The Khoi</span> ✦ All Rights Reserved</footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
