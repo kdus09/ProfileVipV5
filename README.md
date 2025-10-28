@@ -1,113 +1,113 @@
-# ⚡ Legendary Profile
+# 💬 ProfileVipV5
 
-> “Design it. Build it. Secure it.” — *Le The Khoi (KhoiDev)*  
+**ProfileVipV5** là một dự án web portfolio tích hợp **hệ thống chat realtime 2 chiều với Telegram** — giúp bạn vừa giới thiệu bản thân, vừa nhận tin nhắn từ khách truy cập trực tiếp qua Telegram, và phản hồi ngay trong app Telegram.
 
-A **Cyberpunk-style VIP portfolio** built with pure **HTML + CSS + JavaScript** — inspired by **game rank UIs** 🎮  
-Showcasing a **Full-Stack Developer & Cyber Security Enthusiast** in a glowing neon glitch theme.
-
----
-
-## 🌌 Preview
-
-![KhoiDev Legendary Profile](https://github.com/kdus09/khoidev-portfolio/blob/main/preview.jpg)
+> 🌐 Web được deploy frontend trên **Vercel**, backend trên **Render** (hoàn toàn miễn phí và 24/7).
 
 ---
 
-## 🚀 Features
+## 🚀 Tính năng chính
 
-✨ **Glitch Neon Header** — animated “KhoiDev” logo  
-💎 **VIP Avatar Frame** — static legendary ring with glowing aura  
-🧠 **Rotating Circle Text** — “FULL STACK • CYBER SECURITY • DEVELOPER”  
-🏅 **Rank Badge** — displays “LEGENDARY” title  
-🌐 **Social Links** — Zalo, Facebook, Instagram, TikTok, Email, Telegram, GitHub, Website  
-⚡ **Typing Intro Effect** — animated tagline line by line  
-🌈 **Canvas Background** — glowing particles floating behind  
-📱 **Responsive Design** — optimized for both PC and mobile  
-🧩 **No Frameworks** — only raw HTML, CSS, JS
+- ⚡ **Hiệu ứng profile hiện đại**: glitch sáng, nền particle, text typing animation.  
+- 💻 **Chat 2 chiều realtime** giữa Website ↔ Telegram ↔ Web.  
+- 💬 **Gửi và nhận tin nhắn trực tiếp** không cần refresh.  
+- 💾 **Lưu bình luận cục bộ** bằng LocalStorage.  
+- 🎨 **Tùy biến dễ dàng** (avatar, màu, icon kỹ năng, hiệu ứng nền).  
 
 ---
 
-## 🧩 Tech Stack
 
-| Category | Tools |
-|-----------|--------|
-| **Frontend** | HTML5, CSS3, JavaScript |
-| **Fonts** | Orbitron, Poppins |
-| **Icons** | Remix Icon |
-| **Effects** | Glitch Animation, Neon Pulse, Particle Background |
-| **Deployment** | GitHub Pages / Vercel / Netlify |
+## ⚙️ Cài đặt & chạy thử (local)
 
----
-
-## 🏗️ Folder Structure
-
-```
-khoidev-portfolio/
- ┣ index.html   # Main single-file website (contains HTML + CSS + JS)
- ┗ README.md    # This file
-```
-
----
-
-## ⚙️ Setup & Run
-
-### 🔧 Local Preview
-1. Clone this repo:
+1. Cài Node.js nếu chưa có.  
+2. Mở terminal trong thư mục dự án và chạy:
    ```bash
-   git clone https://github.com/kdus09/khoidev-portfolio.git
-   ```
-2. Open the folder and double-click `index.html`.
+   npm install
+   node server.js
 
-### 🌍 Deploy to Vercel
-```bash
-npm i -g vercel
-vercel
+
+Mở index.html bằng trình duyệt (hoặc dùng Live Server trong VSCode).
+
+☁️ Deploy hướng dẫn
+🔹 Backend (Render)
+
+Đăng nhập Render.com
+
+Tạo New Web Service → chọn repo hoặc upload toàn bộ thư mục.
+
+Cấu hình:
+
+Build command: npm install
+
+Start command: npm start
+
+Port: process.env.PORT
+
+Sau khi deploy xong, Render cấp domain, ví dụ:
+
+https://profilevipv5.onrender.com
+
+🔹 Thiết lập Webhook Telegram
+
+Truy cập trình duyệt với đường dẫn:
+
+https://api.telegram.org/bot<YOUR_BOT_TOKEN>/setWebhook?url=https://profilevipv5.onrender.com/webhook/<YOUR_BOT_TOKEN>
+
+
+Nếu thấy phản hồi "Webhook was set" → thành công ✅
+
+🔹 Frontend (Vercel)
+
+Đăng nhập Vercel
+
+Chọn New Project → Import repo ProfileVipV5
+
+Vercel tự nhận index.html làm entry point
+
+Sau deploy, bạn sẽ có domain ví dụ:
+
+https://profilevipv5.vercel.app
+
+🔗 Cập nhật domain backend trong script.js
+
+Tìm và thay các dòng sau bằng domain Render thật của bạn:
 ```
-or use drag-and-drop at [https://vercel.com/new](https://vercel.com/new)
+await fetch("https://profilevipv5.onrender.com/send", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ msg })
+});
 
----
+const socket = new WebSocket("wss://profilevipv5.onrender.com/ws");
+```
+🧠 Ghi chú & tuỳ chỉnh nhanh
 
-## 🧠 Developer Info
+Ảnh đại diện: assets/avatar.png
 
-👤 **Le The Khoi (KhoiDev)**  
-💻 *Full-Stack Developer & Cyber Security Enthusiast*  
-📍 *Vietnam 🇻🇳*  
-🌐 [Website](https://khoidev.io.vn)  
-🐙 [GitHub](https://github.com/kdus09)  
-✈️ [Telegram](https://t.me/khoidz)
+Hiệu ứng typing text: chỉnh ở đầu file script.js
 
----
+Icon kỹ năng: chỉnh trong phần <div class="skills">...</div> của index.html
 
-## 💡 Highlights
+Bình luận lưu cục bộ bằng LocalStorage (không gửi ra server)
 
-- Built with **pure HTML, CSS, and JS** — no dependencies.  
-- Inspired by **hacker / gaming rank interface design**.  
-- Optimized for performance and aesthetic detail.  
-- Easy to customize — just edit text and image links.
+Khi bạn nhắn từ Telegram → web sẽ nhận realtime qua WebSocket
 
----
+⚙️ Thông tin cấu hình trong server.js
+const TELEGRAM_TOKEN = "YOUR_BOT_TOKEN";  // Token từ BotFather
+const ADMIN_CHAT_ID = "YOUR_CHAT_ID";     // Chat ID Telegram của bạn
 
-## 🧰 Customization Guide
 
-| Section | How to Edit |
-|----------|-------------|
-| **Avatar Image** | Replace image URL in `<img src="...">` |
-| **Circle Text** | Edit inside `<div class="circle-text">` |
-| **Rank Title** | Change text in `<div class="rank-badge">` |
-| **Social Links** | Update URLs inside `<div class="socials">` |
-| **Typing Text** | Modify array inside the JS script |
-| **Glitch Title** | Change `data-text` & inner text of `<h1>` |
+Thay hai giá trị này bằng token & chat_id của bạn (có thể lấy qua @userinfobot trên Telegram).
 
----
+👨‍💻 Tác giả
 
-## 📜 License
+Le The Khoi
+📧 lethekhoi209@hotmail.com
 
-MIT License © 2025 [Le The Khoi (KhoiDev)](https://github.com/kdus09)
+🌐 khoidev.io.vn
 
----
+💬 Telegram Bot: @KhoiDevBot
 
-### 💬 Quote
+⚡ ProfileVipV5 — Modern portfolio with realtime Telegram chat.
 
-> "True developers don’t just code — they craft digital worlds."
->
-> — 🧠 *Le The Khoi (KhoiDev)*
+© 2025 Le The Khoi. All rights reserved.
